@@ -1,0 +1,673 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>DI OLVRE</title>
+
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+
+    <!-- BARRA SUPERIOR -->
+
+    <div class="announcement">
+        FREE SHIPPING ON ORDERS OVER €150
+    </div>
+
+
+    <!-- HEADER -->
+
+    <header class="header">
+
+        <div class="header-left">
+            <button class="menu-button" id="menuButton">
+                MENU
+            </button>
+        </div>
+
+        <a href="#" class="logo">
+            DI OLVRE
+        </a>
+
+        <div class="header-right">
+
+            <button class="header-icon" id="searchButton">
+                SEARCH
+            </button>
+
+            <button class="header-icon cart-button" id="cartButton">
+                BAG (<span id="cartCount">0</span>)
+            </button>
+
+        </div>
+
+    </header>
+
+
+    <!-- MENÚ MÓVIL -->
+
+    <div class="mobile-menu" id="mobileMenu">
+
+        <div class="mobile-menu-top">
+
+            <span>MENU</span>
+
+            <button id="closeMenu">
+                ×
+            </button>
+
+        </div>
+
+        <nav class="mobile-nav">
+
+            <a href="#new-in">NEW IN</a>
+            <a href="#collection">COLLECTION</a>
+            <a href="#campaign">CAMPAIGN</a>
+            <a href="#about">ABOUT</a>
+
+        </nav>
+
+        <div class="mobile-socials">
+
+            <a href="#">INSTAGRAM</a>
+            <a href="#">TIKTOK</a>
+
+        </div>
+
+    </div>
+
+
+    <!-- SEARCH -->
+
+    <div class="search-overlay" id="searchOverlay">
+
+        <div class="search-box">
+
+            <input
+                type="text"
+                placeholder="SEARCH"
+                id="searchInput"
+            >
+
+            <button id="closeSearch">
+                ×
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <!-- HERO -->
+
+    <section class="hero">
+
+        <img
+            src="img/hero.jpg"
+            alt="DI OLVRE Campaign"
+            class="hero-image"
+        >
+
+        <div class="hero-overlay">
+
+            <p>DROP 001</p>
+
+            <h1>
+                FROM ITALY<br>
+                TO THE STREETS
+            </h1>
+
+            <a href="#new-in" class="hero-button">
+                SHOP THE DROP
+            </a>
+
+        </div>
+
+    </section>
+
+
+    <!-- NEW IN -->
+
+    <section class="products-section" id="new-in">
+
+        <div class="section-header">
+
+            <h2>NEW IN</h2>
+
+            <a href="#collection">
+                VIEW ALL
+            </a>
+
+        </div>
+
+
+        <div class="products-grid">
+
+
+            <!-- HOODIE -->
+
+            <article
+                class="product-card"
+                data-product="hoodie"
+            >
+
+                <div class="product-image-container">
+
+                    <span class="product-tag">
+                        NEW
+                    </span>
+
+                    <img
+                        src="img/hoodie-front.jpg"
+                        data-front="img/hoodie-front.jpg"
+                        data-back="img/hoodie-back.jpg"
+                        alt="DV ZIP HOODIE"
+                        class="product-image"
+                    >
+
+                </div>
+
+                <div class="product-info">
+
+                    <div>
+
+                        <h3>
+                            DV ZIP HOODIE
+                        </h3>
+
+                        <p>
+                            WASHED CHARCOAL
+                        </p>
+
+                    </div>
+
+                    <span>
+                        €119
+                    </span>
+
+                </div>
+
+            </article>
+
+
+            <!-- PANTS -->
+
+            <article
+                class="product-card"
+                data-product="pants"
+            >
+
+                <div class="product-image-container">
+
+                    <span class="product-tag">
+                        NEW
+                    </span>
+
+                    <img
+                        src="img/pants-front.jpg"
+                        data-front="img/pants-front.jpg"
+                        data-back="img/pants-back.jpg"
+                        alt="DV STREET PANTS"
+                        class="product-image"
+                    >
+
+                </div>
+
+                <div class="product-info">
+
+                    <div>
+
+                        <h3>
+                            DV STREET PANTS
+                        </h3>
+
+                        <p>
+                            BLACK
+                        </p>
+
+                    </div>
+
+                    <span>
+                        €99
+                    </span>
+
+                </div>
+
+            </article>
+
+        </div>
+
+    </section>
+
+
+    <!-- TEXTO DE MARCA -->
+
+    <section class="statement">
+
+        <p>
+            DI OLVRE / 001
+        </p>
+
+        <h2>
+            DESIGNED FOR THE ONES<br>
+            WHO MOVE DIFFERENT.
+        </h2>
+
+    </section>
+
+
+    <!-- CAMPAIGN -->
+
+    <section class="campaign" id="campaign">
+
+        <div class="campaign-image">
+
+            <img
+                src="img/campaign-1.jpg"
+                alt="DI OLVRE Campaign"
+            >
+
+        </div>
+
+        <div class="campaign-content">
+
+            <span>
+                DROP 001
+            </span>
+
+            <h2>
+                BUILT FROM AN IDEA.<br>
+                MADE FOR THE STREET.
+            </h2>
+
+            <p>
+                Heavy fabrics, custom hardware and distinctive
+                silhouettes designed to create pieces that stand
+                on their own.
+            </p>
+
+            <a href="#collection">
+                DISCOVER THE COLLECTION
+            </a>
+
+        </div>
+
+    </section>
+
+
+    <!-- COLECCIÓN -->
+
+    <section class="collection" id="collection">
+
+        <img
+            src="img/campaign-2.jpg"
+            alt="DI OLVRE Collection"
+        >
+
+        <div class="collection-overlay">
+
+            <p>
+                DI OLVRE
+            </p>
+
+            <h2>
+                DROP 001
+            </h2>
+
+            <a href="#new-in">
+                EXPLORE
+            </a>
+
+        </div>
+
+    </section>
+
+
+    <!-- ABOUT -->
+
+    <section class="about" id="about">
+
+        <div class="about-number">
+            001
+        </div>
+
+        <div class="about-content">
+
+            <span>
+                DI OLVRE
+            </span>
+
+            <h2>
+                FROM AN IDEA<br>
+                TO A PHYSICAL PIECE.
+            </h2>
+
+            <p>
+                DI OLVRE explores streetwear through strong silhouettes,
+                industrial details and carefully developed garments.
+                Every piece begins as an idea and evolves through
+                experimentation, materials and construction.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- NEWSLETTER -->
+
+    <section class="newsletter">
+
+        <p>
+            PRIVATE ACCESS
+        </p>
+
+        <h2>
+            JOIN THE NEXT DROP
+        </h2>
+
+        <form id="newsletterForm">
+
+            <input
+                type="email"
+                id="newsletterEmail"
+                placeholder="EMAIL ADDRESS"
+                required
+            >
+
+            <button type="submit">
+                JOIN
+            </button>
+
+        </form>
+
+        <span
+            class="newsletter-message"
+            id="newsletterMessage"
+        ></span>
+
+    </section>
+
+
+    <!-- FOOTER -->
+
+    <footer class="footer">
+
+        <div class="footer-logo">
+            DI OLVRE
+        </div>
+
+        <div class="footer-columns">
+
+
+            <div>
+
+                <h4>SHOP</h4>
+
+                <a href="#new-in">
+                    New In
+                </a>
+
+                <a href="#collection">
+                    Drop 001
+                </a>
+
+            </div>
+
+
+            <div>
+
+                <h4>INFO</h4>
+
+                <a href="#">
+                    Shipping
+                </a>
+
+                <a href="#">
+                    Returns
+                </a>
+
+                <a href="#">
+                    Size Guide
+                </a>
+
+                <a href="#">
+                    Contact
+                </a>
+
+            </div>
+
+
+            <div>
+
+                <h4>SOCIAL</h4>
+
+                <a href="#">
+                    Instagram
+                </a>
+
+                <a href="#">
+                    TikTok
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <div class="footer-bottom">
+
+            <span>
+                © 2026 DI OLVRE
+            </span>
+
+            <span>
+                SEVILLA / SPAIN
+            </span>
+
+        </div>
+
+    </footer>
+
+
+
+    <!-- PRODUCT MODAL -->
+
+    <div
+        class="product-modal"
+        id="productModal"
+    >
+
+        <div class="product-modal-content">
+
+            <button
+                class="close-product"
+                id="closeProduct"
+            >
+                ×
+            </button>
+
+
+            <div class="modal-image">
+
+                <img
+                    src=""
+                    alt=""
+                    id="modalProductImage"
+                >
+
+            </div>
+
+
+            <div class="modal-info">
+
+                <p class="modal-drop">
+                    DROP 001
+                </p>
+
+                <h2 id="modalProductName">
+                    PRODUCT
+                </h2>
+
+                <p
+                    class="modal-price"
+                    id="modalProductPrice"
+                >
+                    €0
+                </p>
+
+
+                <div class="product-description">
+
+                    <p id="modalDescription"></p>
+
+                </div>
+
+
+                <div class="sizes">
+
+                    <p>SELECT SIZE</p>
+
+                    <div class="size-buttons">
+
+                        <button data-size="S">
+                            S
+                        </button>
+
+                        <button data-size="M">
+                            M
+                        </button>
+
+                        <button data-size="L">
+                            L
+                        </button>
+
+                        <button data-size="XL">
+                            XL
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+                <button
+                    class="add-to-cart"
+                    id="addToCart"
+                >
+                    ADD TO BAG
+                </button>
+
+
+                <div class="product-details">
+
+                    <details>
+
+                        <summary>
+                            PRODUCT DETAILS
+                        </summary>
+
+                        <p id="modalDetails"></p>
+
+                    </details>
+
+
+                    <details>
+
+                        <summary>
+                            SHIPPING
+                        </summary>
+
+                        <p>
+                            Shipping information will be
+                            available when the first drop launches.
+                        </p>
+
+                    </details>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- CART -->
+
+    <aside
+        class="cart"
+        id="cart"
+    >
+
+        <div class="cart-header">
+
+            <h2>
+                YOUR BAG
+            </h2>
+
+            <button id="closeCart">
+                ×
+            </button>
+
+        </div>
+
+
+        <div
+            class="cart-items"
+            id="cartItems"
+        >
+
+            <p class="empty-cart">
+                YOUR BAG IS EMPTY.
+            </p>
+
+        </div>
+
+
+        <div class="cart-footer">
+
+            <div class="cart-total">
+
+                <span>
+                    TOTAL
+                </span>
+
+                <span id="cartTotal">
+                    €0
+                </span>
+
+            </div>
+
+            <button class="checkout-button">
+                CHECKOUT
+            </button>
+
+            <p>
+                Taxes and shipping calculated at checkout.
+            </p>
+
+        </div>
+
+    </aside>
+
+
+    <!-- OSCURECER FONDO -->
+
+    <div
+        class="page-overlay"
+        id="pageOverlay"
+    ></div>
+
+
+    <script src="js/main.js"></script>
+
+</body>
+
+</html>
