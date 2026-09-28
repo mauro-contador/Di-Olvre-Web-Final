@@ -8,31 +8,38 @@ const products = {
 
         price: 119,
 
-        image: "img/hoodie-front.jpg",
+        images: [
+            "img/sudadera_parte_delantera.png",
+            "img/sudadera_parte_trasera.png"
+        ],
 
         description:
-            "Heavyweight washed charcoal zip hoodie with custom metallic hardware, oversized hood and structured streetwear fit.",
+            "Heavyweight washed charcoal zip hoodie with custom metallic DV hardware, pink hood lining and signature diagonal zipper construction.",
 
         details:
-            "Heavyweight cotton fleece. Washed charcoal finish. Custom silver hardware. Full front zipper. Decorative V-shaped metal zippers. Pink hood lining. Ribbed cuffs and waistband."
+            "Heavyweight cotton fleece. Washed charcoal finish. Pink hood lining. Silver metal hardware. Full front zipper. Decorative diagonal zippers. Ribbed cuffs and waistband. Custom DV back artwork."
 
     },
+
 
     pants: {
 
         id: "pants",
 
-        name: "DV STREET PANTS",
+        name: "DV FLARE JEANS",
 
-        price: 99,
+        price: 109,
 
-        image: "img/pants-front.jpg",
+        images: [
+            "img/pantalones_parte_delantera.png",
+            "img/pantalones_parte_trasera.png"
+        ],
 
         description:
-            "Wide-leg streetwear pants featuring contrast stitching, custom DV hardware and a relaxed structured silhouette.",
+            "Washed black flare jeans featuring distressed details, paint splashes, custom DV branding and an elongated wide-leg silhouette.",
 
         details:
-            "Heavyweight cotton construction. Wide straight-leg fit. Contrast stitching. Custom DV metal emblem. Side pockets. Rear pockets. Custom graphics."
+            "Washed black denim. Flared silhouette. Distressed construction. White paint detailing. Five-pocket construction. Custom DV details. Wide hem opening."
 
     }
 
@@ -44,29 +51,49 @@ let selectedProduct = null;
 
 let selectedSize = null;
 
-let cart = JSON.parse(localStorage.getItem("diOlvreCart")) || [];
+let currentImageIndex = 0;
+
+let cart =
+    JSON.parse(
+        localStorage.getItem("diOlvreCart")
+    ) || [];
 
 
 
-const cartElement = document.getElementById("cart");
+/* =========================
+   ELEMENTOS
+========================= */
 
-const cartButton = document.getElementById("cartButton");
-
-const closeCart = document.getElementById("closeCart");
-
-const pageOverlay = document.getElementById("pageOverlay");
-
-const cartItems = document.getElementById("cartItems");
-
-const cartCount = document.getElementById("cartCount");
-
-const cartTotal = document.getElementById("cartTotal");
+const overlay =
+    document.getElementById("overlay");
 
 
+const menuPanel =
+    document.getElementById("menuPanel");
 
-const productModal = document.getElementById("productModal");
+const menuButton =
+    document.getElementById("menuButton");
 
-const closeProduct = document.getElementById("closeProduct");
+const closeMenu =
+    document.getElementById("closeMenu");
+
+
+const searchOverlay =
+    document.getElementById("searchOverlay");
+
+const searchButton =
+    document.getElementById("searchButton");
+
+const closeSearch =
+    document.getElementById("closeSearch");
+
+
+const productModal =
+    document.getElementById("productModal");
+
+const closeProduct =
+    document.getElementById("closeProduct");
+
 
 const modalProductImage =
     document.getElementById("modalProductImage");
@@ -83,78 +110,105 @@ const modalDescription =
 const modalDetails =
     document.getElementById("modalDetails");
 
-const addToCartButton =
+
+const previousImage =
+    document.getElementById("previousImage");
+
+const nextImage =
+    document.getElementById("nextImage");
+
+const galleryCounter =
+    document.getElementById("galleryCounter");
+
+
+const addToCart =
     document.getElementById("addToCart");
 
 
+const cartPanel =
+    document.getElementById("cartPanel");
 
-const menuButton =
-    document.getElementById("menuButton");
+const cartButton =
+    document.getElementById("cartButton");
 
-const mobileMenu =
-    document.getElementById("mobileMenu");
+const closeCart =
+    document.getElementById("closeCart");
 
-const closeMenu =
-    document.getElementById("closeMenu");
+const cartItems =
+    document.getElementById("cartItems");
 
+const cartCount =
+    document.getElementById("cartCount");
 
-
-const searchButton =
-    document.getElementById("searchButton");
-
-const searchOverlay =
-    document.getElementById("searchOverlay");
-
-const closeSearch =
-    document.getElementById("closeSearch");
+const cartTotal =
+    document.getElementById("cartTotal");
 
 
 
 /* =========================
-   PRODUCT HOVER
+   HOVER PRODUCTOS
 ========================= */
 
-document.querySelectorAll(".product-card").forEach(card => {
+document
+    .querySelectorAll(".product-card")
+    .forEach(card => {
 
-    const image =
-        card.querySelector(".product-image");
+        const image =
+            card.querySelector(".product-image");
 
 
-    card.addEventListener("mouseenter", () => {
+        card.addEventListener("mouseenter", () => {
 
-        image.src =
-            image.dataset.back;
+            image.src =
+                image.dataset.back;
+
+        });
+
+
+        card.addEventListener("mouseleave", () => {
+
+            image.src =
+                image.dataset.front;
+
+        });
 
     });
-
-
-    card.addEventListener("mouseleave", () => {
-
-        image.src =
-            image.dataset.front;
-
-    });
-
-});
 
 
 
 /* =========================
-   OPEN PRODUCT
+   ABRIR PRODUCTO
 ========================= */
 
-document.querySelectorAll(".product-card").forEach(card => {
+document
+    .querySelectorAll(".product-card")
+    .forEach(card => {
 
-    card.addEventListener("click", () => {
+        card.addEventListener("click", () => {
 
-        const productId =
-            card.dataset.product;
+            openProduct(
+                card.dataset.product
+            );
 
-        openProduct(productId);
+        });
 
     });
 
-});
+
+
+document
+    .querySelectorAll(".product-open")
+    .forEach(button => {
+
+        button.addEventListener("click", () => {
+
+            openProduct(
+                button.dataset.product
+            );
+
+        });
+
+    });
 
 
 
@@ -165,9 +219,8 @@ function openProduct(productId) {
 
     selectedSize = null;
 
+    currentImageIndex = 0;
 
-    modalProductImage.src =
-        selectedProduct.image;
 
     modalProductName.textContent =
         selectedProduct.name;
@@ -183,162 +236,283 @@ function openProduct(productId) {
 
 
     document
-        .querySelectorAll(".size-buttons button")
+        .querySelectorAll(
+            ".size-options button"
+        )
         .forEach(button => {
 
-            button.classList.remove("selected");
+            button.classList.remove(
+                "selected"
+            );
 
         });
 
 
-    productModal.classList.add("active");
+    updateProductImage();
 
-    document.body.classList.add("no-scroll");
+
+    productModal.classList.add(
+        "active"
+    );
+
+
+    document.body.classList.add(
+        "no-scroll"
+    );
 
 }
 
 
 
-closeProduct.addEventListener("click", () => {
+function closeProductModal() {
 
-    productModal.classList.remove("active");
+    productModal.classList.remove(
+        "active"
+    );
 
-    document.body.classList.remove("no-scroll");
+    document.body.classList.remove(
+        "no-scroll"
+    );
 
-});
+}
+
+
+
+closeProduct.addEventListener(
+    "click",
+    closeProductModal
+);
 
 
 
 /* =========================
-   SIZE SELECTOR
+   GALERÍA
+========================= */
+
+function updateProductImage() {
+
+    modalProductImage.src =
+        selectedProduct.images[
+            currentImageIndex
+        ];
+
+
+    galleryCounter.textContent =
+        `${currentImageIndex + 1} / ${selectedProduct.images.length}`;
+
+}
+
+
+
+nextImage.addEventListener(
+    "click",
+    () => {
+
+        if (!selectedProduct) {
+            return;
+        }
+
+
+        currentImageIndex++;
+
+
+        if (
+            currentImageIndex >=
+            selectedProduct.images.length
+        ) {
+
+            currentImageIndex = 0;
+
+        }
+
+
+        updateProductImage();
+
+    }
+);
+
+
+
+previousImage.addEventListener(
+    "click",
+    () => {
+
+        if (!selectedProduct) {
+            return;
+        }
+
+
+        currentImageIndex--;
+
+
+        if (currentImageIndex < 0) {
+
+            currentImageIndex =
+                selectedProduct.images.length - 1;
+
+        }
+
+
+        updateProductImage();
+
+    }
+);
+
+
+
+/* =========================
+   TALLAS
 ========================= */
 
 document
-    .querySelectorAll(".size-buttons button")
+    .querySelectorAll(
+        ".size-options button"
+    )
     .forEach(button => {
 
-        button.addEventListener("click", () => {
+        button.addEventListener(
+            "click",
+            () => {
 
-            document
-                .querySelectorAll(".size-buttons button")
-                .forEach(btn => {
+                document
+                    .querySelectorAll(
+                        ".size-options button"
+                    )
+                    .forEach(btn => {
 
-                    btn.classList.remove("selected");
+                        btn.classList.remove(
+                            "selected"
+                        );
 
-                });
+                    });
 
 
-            button.classList.add("selected");
+                button.classList.add(
+                    "selected"
+                );
 
 
-            selectedSize =
-                button.dataset.size;
+                selectedSize =
+                    button.dataset.size;
 
-        });
+            }
+        );
 
     });
 
 
 
 /* =========================
-   ADD TO CART
+   AÑADIR AL CARRITO
 ========================= */
 
-addToCartButton.addEventListener("click", () => {
+addToCart.addEventListener(
+    "click",
+    () => {
 
-    if (!selectedSize) {
+        if (!selectedSize) {
 
-        alert("Select a size.");
+            alert(
+                "Selecciona una talla."
+            );
 
-        return;
+            return;
+
+        }
+
+
+        const item = {
+
+            id:
+                Date.now(),
+
+            productId:
+                selectedProduct.id,
+
+            name:
+                selectedProduct.name,
+
+            size:
+                selectedSize,
+
+            price:
+                selectedProduct.price,
+
+            image:
+                selectedProduct.images[0]
+
+        };
+
+
+        cart.push(item);
+
+
+        saveCart();
+
+        renderCart();
+
+
+        closeProductModal();
+
+        openCartPanel();
 
     }
-
-
-    const cartProduct = {
-
-        id:
-            Date.now(),
-
-        productId:
-            selectedProduct.id,
-
-        name:
-            selectedProduct.name,
-
-        price:
-            selectedProduct.price,
-
-        image:
-            selectedProduct.image,
-
-        size:
-            selectedSize
-
-    };
-
-
-    cart.push(cartProduct);
-
-
-    saveCart();
-
-    renderCart();
-
-
-    productModal.classList.remove("active");
-
-    openCart();
-
-});
+);
 
 
 
 /* =========================
-   CART
+   CARRITO
 ========================= */
 
-cartButton.addEventListener("click", openCart);
+function openCartPanel() {
 
+    cartPanel.classList.add(
+        "active"
+    );
 
-closeCart.addEventListener("click", closeCartPanel);
+    overlay.classList.add(
+        "active"
+    );
 
-
-function openCart() {
-
-    cartElement.classList.add("active");
-
-    pageOverlay.classList.add("active");
-
-    document.body.classList.add("no-scroll");
+    document.body.classList.add(
+        "no-scroll"
+    );
 
 }
+
 
 
 function closeCartPanel() {
 
-    cartElement.classList.remove("active");
+    cartPanel.classList.remove(
+        "active"
+    );
 
-    pageOverlay.classList.remove("active");
+    overlay.classList.remove(
+        "active"
+    );
 
-    document.body.classList.remove("no-scroll");
+    document.body.classList.remove(
+        "no-scroll"
+    );
 
 }
 
 
-pageOverlay.addEventListener("click", () => {
 
-    closeCartPanel();
-
-    mobileMenu.classList.remove("active");
-
-});
+cartButton.addEventListener(
+    "click",
+    openCartPanel
+);
 
 
+closeCart.addEventListener(
+    "click",
+    closeCartPanel
+);
 
-/* =========================
-   RENDER CART
-========================= */
+
 
 function renderCart() {
 
@@ -358,14 +532,16 @@ function renderCart() {
 
     cart.forEach(item => {
 
-        const itemElement =
+        const element =
             document.createElement("div");
 
 
-        itemElement.classList.add("cart-item");
+        element.classList.add(
+            "cart-item"
+        );
 
 
-        itemElement.innerHTML = `
+        element.innerHTML = `
 
             <img
                 src="${item.image}"
@@ -389,8 +565,7 @@ function renderCart() {
             </div>
 
             <button
-                class="remove-item"
-                onclick="removeFromCart(${item.id})"
+                onclick="removeCartItem(${item.id})"
             >
                 REMOVE
             </button>
@@ -398,7 +573,9 @@ function renderCart() {
         `;
 
 
-        cartItems.appendChild(itemElement);
+        cartItems.appendChild(
+            element
+        );
 
     });
 
@@ -414,6 +591,7 @@ function renderCart() {
     cartCount.textContent =
         cart.length;
 
+
     cartTotal.textContent =
         `€${total}`;
 
@@ -421,7 +599,7 @@ function renderCart() {
 
 
 
-function removeFromCart(id) {
+function removeCartItem(id) {
 
     cart =
         cart.filter(
@@ -450,44 +628,65 @@ function saveCart() {
 
 
 /* =========================
-   MOBILE MENU
+   MENU
 ========================= */
 
-menuButton.addEventListener("click", () => {
+menuButton.addEventListener(
+    "click",
+    () => {
 
-    mobileMenu.classList.add("active");
+        menuPanel.classList.add(
+            "active"
+        );
 
-    pageOverlay.classList.add("active");
+        overlay.classList.add(
+            "active"
+        );
 
-    document.body.classList.add("no-scroll");
+        document.body.classList.add(
+            "no-scroll"
+        );
 
-});
+    }
+);
 
 
-closeMenu.addEventListener("click", () => {
 
-    mobileMenu.classList.remove("active");
+closeMenu.addEventListener(
+    "click",
+    closeMenuPanel
+);
 
-    pageOverlay.classList.remove("active");
 
-    document.body.classList.remove("no-scroll");
 
-});
+function closeMenuPanel() {
+
+    menuPanel.classList.remove(
+        "active"
+    );
+
+    overlay.classList.remove(
+        "active"
+    );
+
+    document.body.classList.remove(
+        "no-scroll"
+    );
+
+}
+
 
 
 document
-    .querySelectorAll(".mobile-nav a")
+    .querySelectorAll(
+        ".main-nav a"
+    )
     .forEach(link => {
 
-        link.addEventListener("click", () => {
-
-            mobileMenu.classList.remove("active");
-
-            pageOverlay.classList.remove("active");
-
-            document.body.classList.remove("no-scroll");
-
-        });
+        link.addEventListener(
+            "click",
+            closeMenuPanel
+        );
 
     });
 
@@ -497,22 +696,54 @@ document
    SEARCH
 ========================= */
 
-searchButton.addEventListener("click", () => {
+searchButton.addEventListener(
+    "click",
+    () => {
 
-    searchOverlay.classList.add("active");
+        searchOverlay.classList.add(
+            "active"
+        );
 
-    document.body.classList.add("no-scroll");
+        document.body.classList.add(
+            "no-scroll"
+        );
 
-});
+    }
+);
 
 
-closeSearch.addEventListener("click", () => {
 
-    searchOverlay.classList.remove("active");
+closeSearch.addEventListener(
+    "click",
+    () => {
 
-    document.body.classList.remove("no-scroll");
+        searchOverlay.classList.remove(
+            "active"
+        );
 
-});
+        document.body.classList.remove(
+            "no-scroll"
+        );
+
+    }
+);
+
+
+
+/* =========================
+   OVERLAY
+========================= */
+
+overlay.addEventListener(
+    "click",
+    () => {
+
+        closeCartPanel();
+
+        closeMenuPanel();
+
+    }
+);
 
 
 
@@ -521,39 +752,38 @@ closeSearch.addEventListener("click", () => {
 ========================= */
 
 const newsletterForm =
-    document.getElementById("newsletterForm");
-
-const newsletterMessage =
-    document.getElementById("newsletterMessage");
-
-
-newsletterForm.addEventListener("submit", event => {
-
-    event.preventDefault();
-
-
-    const email =
-        document.getElementById("newsletterEmail").value;
-
-
-    newsletterMessage.textContent =
-        "YOU'RE ON THE LIST.";
-
-
-    console.log(
-        "Newsletter:",
-        email
+    document.getElementById(
+        "newsletterForm"
     );
 
 
-    newsletterForm.reset();
+const newsletterMessage =
+    document.getElementById(
+        "newsletterMessage"
+    );
 
-});
+
+
+newsletterForm.addEventListener(
+    "submit",
+    event => {
+
+        event.preventDefault();
+
+
+        newsletterMessage.textContent =
+            "YOU'RE ON THE LIST.";
+
+
+        newsletterForm.reset();
+
+    }
+);
 
 
 
 /* =========================
-   INITIALIZE
+   INICIALIZAR
 ========================= */
 
 renderCart();
