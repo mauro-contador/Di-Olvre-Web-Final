@@ -3,42 +3,236 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>DI OLVRE</title>
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
 
-    <link rel="stylesheet" href="css/styles.css">
+    <meta
+        name="description"
+        content="DI OLVRE — DROP 001. Independent streetwear."
+    >
+
+    <title>DI OLVRE — DROP 001</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap"
+        rel="stylesheet"
+    >
+
+    <link
+        rel="stylesheet"
+        href="css/styles.css"
+    >
 </head>
+
 
 <body>
 
-    <!-- BARRA SUPERIOR -->
 
-    <div class="announcement">
-        DROP 001 — COMING SOON
+    <!-- =========================
+         PRIVATE DROP ACCESS
+         Añadido sin modificar el resto de la web
+    ========================== -->
+
+    <section
+        class="drop-gate"
+        id="dropGate"
+        aria-label="Private drop access"
+    >
+
+        <div class="drop-gate-noise"></div>
+
+        <div class="drop-gate-topline">
+
+            <span>DI OLVRE</span>
+
+            <span>PRIVATE ACCESS</span>
+
+            <span>DROP 001</span>
+
+        </div>
+
+
+        <div class="drop-gate-content">
+
+            <div class="drop-gate-logo-stage">
+
+                <div class="drop-gate-logo-glow"></div>
+
+                <img
+                    src="img/logo-di-olvre-3d.png"
+                    alt="DI OLVRE"
+                    class="drop-gate-logo"
+                >
+
+            </div>
+
+
+            <p class="drop-gate-kicker">
+                DROP 001 / PRIVATE RELEASE
+            </p>
+
+            <h1 class="drop-gate-title">
+                ENTER THE DROP
+            </h1>
+
+            <p class="drop-gate-copy">
+                This release is currently password protected.
+            </p>
+
+
+            <form
+                class="drop-gate-form"
+                id="dropGateForm"
+                autocomplete="off"
+            >
+
+                <div class="drop-gate-field">
+
+                    <input
+                        type="password"
+                        id="dropGatePassword"
+                        placeholder="PASSWORD"
+                        aria-label="Password"
+                        autocomplete="current-password"
+                    >
+
+                    <button
+                        type="submit"
+                        id="dropGateSubmit"
+                    >
+                        ENTER
+                    </button>
+
+                </div>
+
+                <p
+                    class="drop-gate-message"
+                    id="dropGateMessage"
+                    aria-live="polite"
+                ></p>
+
+            </form>
+
+        </div>
+
+
+        <div class="drop-gate-bottomline">
+
+            <span>FROM ITALY TO THE STREETS</span>
+
+            <span>© 2026</span>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         PRELOADER
+    ========================== -->
+
+    <div
+        class="preloader"
+        id="preloader"
+    >
+
+        <div class="preloader-content">
+
+            <img
+                src="img/logo-di-olvre-3d.png"
+                alt="DI OLVRE"
+            >
+
+            <div class="preloader-line">
+                <span></span>
+            </div>
+
+            <p>
+                DROP 001
+            </p>
+
+        </div>
+
     </div>
 
 
-    <!-- HEADER -->
 
-    <header class="header">
+    <!-- =========================
+         TOP BAR
+    ========================== -->
 
-        <button class="menu-button" id="menuButton">
+    <div class="top-bar">
+
+        <span>
+            DROP 001
+        </span>
+
+        <span class="top-bar-center">
+            LIMITED RELEASE
+        </span>
+
+        <span>
+            2026
+        </span>
+
+    </div>
+
+
+
+    <!-- =========================
+         HEADER
+    ========================== -->
+
+    <header
+        class="header"
+        id="header"
+    >
+
+        <button
+            class="nav-button"
+            id="menuButton"
+        >
             MENU
         </button>
 
-        <a href="#" class="logo">
-            DI OLVRE
+
+        <a
+            href="#"
+            class="header-logo"
+        >
+
+            <img
+                src="img/logo-di-olvre-3d.png"
+                alt="DI OLVRE"
+            >
+
         </a>
+
 
         <div class="header-actions">
 
-            <button class="search-button" id="searchButton">
+            <button
+                class="nav-button search-desktop"
+                id="searchButton"
+            >
                 SEARCH
             </button>
 
-            <button class="cart-button" id="cartButton">
-                BAG (<span id="cartCount">0</span>)
+            <button
+                class="nav-button"
+                id="cartButton"
+            >
+                BAG
+                <span>
+                    (<span id="cartCount">0</span>)
+                </span>
             </button>
 
         </div>
@@ -46,472 +240,925 @@
     </header>
 
 
-    <!-- MENÚ LATERAL -->
 
-    <aside class="menu-panel" id="menuPanel">
-
-        <div class="panel-header">
-
-            <span>MENU</span>
-
-            <button id="closeMenu">
-                ×
-            </button>
-
-        </div>
-
-        <nav class="main-nav">
-
-            <a href="#new-in">NEW IN</a>
-            <a href="#collection">DROP 001</a>
-            <a href="#story">ABOUT</a>
-
-        </nav>
-
-        <div class="menu-footer">
-
-            <a href="#">INSTAGRAM</a>
-            <a href="#">TIKTOK</a>
-
-        </div>
-
-    </aside>
+    <main>
 
 
-    <!-- BUSCADOR -->
+        <!-- =========================
+             HERO
+        ========================== -->
 
-    <section class="search-overlay" id="searchOverlay">
+        <section class="hero">
 
-        <div class="search-inner">
 
-            <div class="search-top">
+            <div class="hero-background-text">
+                DI OLVRE
+            </div>
 
-                <span>SEARCH</span>
 
-                <button id="closeSearch">
-                    ×
+            <div
+                class="hero-product hero-hoodie"
+                data-parallax="-8"
+            >
+
+                <img
+                    src="img/sudadera_parte_delantera.png"
+                    alt="DI OLVRE DV Zip Hoodie"
+                >
+
+            </div>
+
+
+            <div
+                class="hero-product hero-vest"
+                data-parallax="5"
+            >
+
+                <img
+                    src="img/chaleco-parte-delantera.png"
+                    alt="DI OLVRE DV Puffer Vest"
+                >
+
+            </div>
+
+
+            <div
+                class="hero-product hero-jeans"
+                data-parallax="10"
+            >
+
+                <img
+                    src="img/pantalones_parte_delantera.png"
+                    alt="DI OLVRE DV Flare Jeans"
+                >
+
+            </div>
+
+
+            <div class="hero-copy">
+
+                <p class="eyebrow">
+                    DI OLVRE / DROP 001
+                </p>
+
+                <h1>
+                    FROM ITALY
+                    <span>TO THE STREETS.</span>
+                </h1>
+
+                <p class="hero-subtitle">
+                    THREE PIECES. ONE LANGUAGE.
+                </p>
+
+                <div class="hero-buttons">
+
+                    <a
+                        href="#shop"
+                        class="button button-dark"
+                    >
+                        EXPLORE DROP
+                    </a>
+
+                    <a
+                        href="#story"
+                        class="button button-light"
+                    >
+                        OUR STORY
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <div class="hero-footer">
+
+                <span>
+                    INDEPENDENT STREETWEAR
+                </span>
+
+                <span>
+                    001 / THREE PIECES
+                </span>
+
+                <span>
+                    SCROLL TO DISCOVER ↓
+                </span>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =========================
+             MARQUEE
+        ========================== -->
+
+        <section class="marquee">
+
+            <div class="marquee-track">
+
+                <span>DI OLVRE</span>
+                <i>✦</i>
+
+                <span>DROP 001</span>
+                <i>✦</i>
+
+                <span>HOODIE</span>
+                <i>✦</i>
+
+                <span>PUFFER VEST</span>
+                <i>✦</i>
+
+                <span>FLARE JEANS</span>
+                <i>✦</i>
+
+                <span>FROM ITALY TO THE STREETS</span>
+                <i>✦</i>
+
+
+                <span>DI OLVRE</span>
+                <i>✦</i>
+
+                <span>DROP 001</span>
+                <i>✦</i>
+
+                <span>HOODIE</span>
+                <i>✦</i>
+
+                <span>PUFFER VEST</span>
+                <i>✦</i>
+
+                <span>FLARE JEANS</span>
+                <i>✦</i>
+
+                <span>FROM ITALY TO THE STREETS</span>
+                <i>✦</i>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =========================
+             SHOP
+        ========================== -->
+
+        <section
+            class="shop-section"
+            id="shop"
+        >
+
+            <div class="section-intro reveal">
+
+                <div>
+
+                    <p class="section-label">
+                        01 / COLLECTION
+                    </p>
+
+                    <h2>
+                        DROP
+                        <span>001.</span>
+                    </h2>
+
+                </div>
+
+
+                <div class="section-intro-right">
+
+                    <p class="section-description">
+                        Three pieces developed around contrast,
+                        metallic hardware, washed textures and
+                        recognisable DI OLVRE detailing.
+                    </p>
+
+                    <span class="collection-count">
+                        03 PIECES
+                    </span>
+
+                </div>
+
+            </div>
+
+
+
+            <div class="products-grid">
+
+
+                <!-- =========================
+                     HOODIE
+                ========================== -->
+
+                <article
+                    class="product-card reveal"
+                    data-product="hoodie"
+                >
+
+                    <div class="product-number">
+                        01 / 03
+                    </div>
+
+
+                    <div class="product-image-wrapper">
+
+                        <img
+                            src="img/sudadera_parte_delantera.png"
+                            data-front="img/sudadera_parte_delantera.png"
+                            data-back="img/sudadera_parte_trasera.png"
+                            class="product-image"
+                            alt="DV Zip Hoodie"
+                        >
+
+                        <span class="product-status">
+                            NEW
+                        </span>
+
+                        <span class="view-hint">
+                            FRONT / BACK
+                        </span>
+
+                        <button class="quick-view">
+                            VIEW PRODUCT
+                        </button>
+
+                    </div>
+
+
+                    <div class="product-data">
+
+                        <div>
+
+                            <h3>
+                                DV ZIP HOODIE
+                            </h3>
+
+                            <p>
+                                WASHED CHARCOAL / PINK
+                            </p>
+
+                        </div>
+
+                        <span>
+                            €119
+                        </span>
+
+                    </div>
+
+                </article>
+
+
+
+                <!-- =========================
+                     VEST
+                ========================== -->
+
+                <article
+                    class="product-card product-card-featured reveal"
+                    data-product="vest"
+                >
+
+                    <div class="product-number">
+                        02 / 03
+                    </div>
+
+
+                    <div class="product-image-wrapper">
+
+                        <img
+                            src="img/chaleco-parte-delantera.png"
+                            data-front="img/chaleco-parte-delantera.png"
+                            data-back="img/chaleco-parte-trasera.png"
+                            class="product-image"
+                            alt="DV Puffer Vest"
+                        >
+
+                        <span class="product-status">
+                            NEW
+                        </span>
+
+                        <span class="view-hint">
+                            FRONT / BACK
+                        </span>
+
+                        <button class="quick-view">
+                            VIEW PRODUCT
+                        </button>
+
+                    </div>
+
+
+                    <div class="product-data">
+
+                        <div>
+
+                            <h3>
+                                DV PUFFER VEST
+                            </h3>
+
+                            <p>
+                                GLOSS BLACK
+                            </p>
+
+                        </div>
+
+                        <span class="price-tba">
+                            PRICE TBA
+                        </span>
+
+                    </div>
+
+                </article>
+
+
+
+                <!-- =========================
+                     JEANS
+                ========================== -->
+
+                <article
+                    class="product-card reveal"
+                    data-product="pants"
+                >
+
+                    <div class="product-number">
+                        03 / 03
+                    </div>
+
+
+                    <div class="product-image-wrapper">
+
+                        <img
+                            src="img/pantalones_parte_delantera.png"
+                            data-front="img/pantalones_parte_delantera.png"
+                            data-back="img/pantalones_parte_trasera.png"
+                            class="product-image"
+                            alt="DV Flare Jeans"
+                        >
+
+                        <span class="product-status">
+                            NEW
+                        </span>
+
+                        <span class="view-hint">
+                            FRONT / BACK
+                        </span>
+
+                        <button class="quick-view">
+                            VIEW PRODUCT
+                        </button>
+
+                    </div>
+
+
+                    <div class="product-data">
+
+                        <div>
+
+                            <h3>
+                                DV FLARE JEANS
+                            </h3>
+
+                            <p>
+                                WASHED BLACK
+                            </p>
+
+                        </div>
+
+                        <span>
+                            €109
+                        </span>
+
+                    </div>
+
+                </article>
+
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =========================
+             STATEMENT
+        ========================== -->
+
+        <section class="statement">
+
+            <div class="statement-top reveal">
+
+                <span>
+                    DI OLVRE
+                </span>
+
+                <span>
+                    DROP 001
+                </span>
+
+                <span>
+                    EST. 2026
+                </span>
+
+            </div>
+
+
+            <h2 class="reveal">
+
+                NOT MADE
+
+                <span>
+                    TO LOOK
+                </span>
+
+                THE SAME.
+
+            </h2>
+
+        </section>
+
+
+
+        <!-- =========================
+             VEST HERO FEATURE
+        ========================== -->
+
+        <section class="vest-showcase">
+
+
+            <div class="vest-showcase-copy reveal">
+
+                <p class="section-label">
+                    02 / DV PUFFER VEST
+                </p>
+
+                <h2>
+                    THE THIRD
+                    <span>PIECE.</span>
+                </h2>
+
+                <p>
+                    Gloss-finish padded vest built around
+                    sculpted quilting, metallic DI OLVRE
+                    details and a structured hood.
+                </p>
+
+                <button
+                    class="feature-link product-open"
+                    data-product="vest"
+                >
+                    EXPLORE VEST →
                 </button>
 
             </div>
 
-            <input
-                type="text"
-                placeholder="WHAT ARE YOU LOOKING FOR?"
-                id="searchInput"
-            >
 
-        </div>
+            <div class="vest-showcase-images">
 
-    </section>
+                <div class="vest-front reveal">
 
-
-    <!-- HERO -->
-
-    <section class="hero">
-
-        <div class="hero-product hero-left">
-
-            <img
-                src="img/sudadera_parte_delantera.png"
-                alt="DI OLVRE Hoodie"
-            >
-
-        </div>
-
-        <div class="hero-center">
-
-            <p>
-                DI OLVRE / 001
-            </p>
-
-            <h1>
-                FROM ITALY<br>
-                TO THE STREETS
-            </h1>
-
-            <a href="#new-in">
-                SHOP THE DROP
-            </a>
-
-        </div>
-
-        <div class="hero-product hero-right">
-
-            <img
-                src="img/pantalones_parte_delantera.png"
-                alt="DI OLVRE Flare Jeans"
-            >
-
-        </div>
-
-    </section>
-
-
-    <!-- NEW IN -->
-
-    <section class="new-in" id="new-in">
-
-        <div class="section-heading">
-
-            <h2>NEW IN</h2>
-
-            <span>
-                02 PRODUCTS
-            </span>
-
-        </div>
-
-
-        <div class="product-grid">
-
-            <!-- HOODIE -->
-
-            <article
-                class="product-card"
-                data-product="hoodie"
-            >
-
-                <div class="product-photo">
-
-                    <span class="new-badge">
-                        NEW
+                    <span>
+                        FRONT
                     </span>
 
                     <img
-                        class="product-image"
-                        src="img/sudadera_parte_delantera.png"
-                        data-front="img/sudadera_parte_delantera.png"
-                        data-back="img/sudadera_parte_trasera.png"
-                        alt="DV ZIP HOODIE"
+                        src="img/chaleco-parte-delantera.png"
+                        alt="DV Puffer Vest Front"
                     >
-
-                    <button class="quick-view">
-                        QUICK VIEW
-                    </button>
 
                 </div>
 
-                <div class="product-meta">
 
-                    <div>
+                <div class="vest-back reveal">
 
-                        <h3>
-                            DV ZIP HOODIE
-                        </h3>
+                    <span>
+                        BACK
+                    </span>
 
-                        <p>
-                            WASHED CHARCOAL / PINK
-                        </p>
+                    <img
+                        src="img/chaleco-parte-trasera.png"
+                        alt="DV Puffer Vest Back"
+                    >
 
-                    </div>
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =========================
+             HOODIE FEATURE
+        ========================== -->
+
+        <section class="product-feature">
+
+
+            <div class="feature-visual reveal">
+
+                <span class="feature-number">
+                    01
+                </span>
+
+                <img
+                    src="img/sudadera_parte_trasera.png"
+                    alt="DI OLVRE Hoodie Back"
+                >
+
+            </div>
+
+
+            <div class="feature-content reveal">
+
+                <p class="section-label">
+                    DV ZIP HOODIE
+                </p>
+
+                <h2>
+                    BUILT
+                    <span>
+                        DIFFERENT.
+                    </span>
+                </h2>
+
+                <p>
+                    Heavyweight washed construction,
+                    contrast pink hood lining and custom
+                    metallic details define the first layer
+                    of DROP 001.
+                </p>
+
+                <ul>
+
+                    <li>
+                        HEAVYWEIGHT CONSTRUCTION
+                    </li>
+
+                    <li>
+                        CUSTOM METAL HARDWARE
+                    </li>
+
+                    <li>
+                        WASHED CHARCOAL FINISH
+                    </li>
+
+                    <li>
+                        DIAGONAL ZIP DETAILS
+                    </li>
+
+                </ul>
+
+                <button
+                    class="feature-link product-open"
+                    data-product="hoodie"
+                >
+                    EXPLORE HOODIE →
+                </button>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =========================
+             JEANS FEATURE
+        ========================== -->
+
+        <section class="product-feature product-feature-reverse">
+
+
+            <div class="feature-visual reveal">
+
+                <span class="feature-number">
+                    03
+                </span>
+
+                <img
+                    src="img/pantalones_parte_trasera.png"
+                    alt="DI OLVRE Flare Jeans Back"
+                >
+
+            </div>
+
+
+            <div class="feature-content reveal">
+
+                <p class="section-label">
+                    DV FLARE JEANS
+                </p>
+
+                <h2>
+                    WASHED.
+                    <span>
+                        DISTRESSED.
+                    </span>
+                    REFINED.
+                </h2>
+
+                <p>
+                    Wide flare denim with washed gradients,
+                    distressed detailing and custom DI OLVRE
+                    graphic elements.
+                </p>
+
+                <ul>
+
+                    <li>
+                        FLARED SILHOUETTE
+                    </li>
+
+                    <li>
+                        WASHED BLACK DENIM
+                    </li>
+
+                    <li>
+                        DISTRESSED DETAILS
+                    </li>
+
+                    <li>
+                        CUSTOM DV DETAILS
+                    </li>
+
+                </ul>
+
+                <button
+                    class="feature-link product-open"
+                    data-product="pants"
+                >
+                    EXPLORE JEANS →
+                </button>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =========================
+             THREE PIECES EDITORIAL
+        ========================== -->
+
+        <section class="editorial">
+
+
+            <div class="editorial-title reveal">
+
+                <p>
+                    DI OLVRE / 001
+                </p>
+
+                <h2>
+                    THREE PIECES.
+                    <br>
+                    ONE IDENTITY.
+                </h2>
+
+            </div>
+
+
+            <div class="editorial-stage">
+
+
+                <img
+                    src="img/sudadera_parte_delantera.png"
+                    alt=""
+                    class="editorial-hoodie"
+                >
+
+
+                <img
+                    src="img/chaleco-parte-delantera.png"
+                    alt=""
+                    class="editorial-vest"
+                >
+
+
+                <img
+                    src="img/pantalones_parte_delantera.png"
+                    alt=""
+                    class="editorial-jeans"
+                >
+
+
+                <div class="editorial-center">
+
+                    <span>
+                        DROP
+                    </span>
 
                     <strong>
-                        €119
+                        001
                     </strong>
 
                 </div>
 
-            </article>
+
+            </div>
+
+        </section>
 
 
-            <!-- PANTS -->
 
-            <article
-                class="product-card"
-                data-product="pants"
-            >
+        <!-- =========================
+             STORY
+        ========================== -->
 
-                <div class="product-photo">
+        <section
+            class="story"
+            id="story"
+        >
 
-                    <span class="new-badge">
-                        NEW
+
+            <div class="story-sidebar">
+
+                <span>
+                    04 / MANIFESTO
+                </span>
+
+            </div>
+
+
+            <div class="story-main reveal">
+
+                <p class="section-label">
+                    DI OLVRE
+                </p>
+
+                <h2>
+                    AN IDEA
+                    <span>
+                        BECOMES
                     </span>
+                    SOMETHING REAL.
+                </h2>
 
-                    <img
-                        class="product-image"
-                        src="img/pantalones_parte_delantera.png"
-                        data-front="img/pantalones_parte_delantera.png"
-                        data-back="img/pantalones_parte_trasera.png"
-                        alt="DV FLARE JEANS"
-                    >
 
-                    <button class="quick-view">
-                        QUICK VIEW
-                    </button>
+                <div class="story-grid">
 
-                </div>
+                    <p>
+                        DI OLVRE starts with experimentation:
+                        silhouettes, materials, hardware and
+                        details designed to give each piece
+                        its own identity.
+                    </p>
 
-                <div class="product-meta">
-
-                    <div>
-
-                        <h3>
-                            DV FLARE JEANS
-                        </h3>
-
-                        <p>
-                            WASHED BLACK
-                        </p>
-
-                    </div>
-
-                    <strong>
-                        €109
-                    </strong>
+                    <p>
+                        DROP 001 introduces three garments
+                        developed as one visual system:
+                        hoodie, puffer vest and flare denim.
+                    </p>
 
                 </div>
 
-            </article>
+            </div>
 
-        </div>
-
-    </section>
+        </section>
 
 
-    <!-- MANIFIESTO -->
 
-    <section class="manifesto">
+        <!-- =========================
+             NEWSLETTER
+        ========================== -->
 
-        <p>
-            DI OLVRE
-        </p>
-
-        <h2>
-            NOT MADE TO<br>
-            BLEND IN.
-        </h2>
-
-    </section>
+        <section
+            class="newsletter"
+            id="private-access"
+        >
 
 
-    <!-- FEATURE HOODIE -->
-
-    <section class="feature">
-
-        <div class="feature-image">
-
-            <img
-                src="img/sudadera_parte_trasera.png"
-                alt="DV Hoodie Back"
-            >
-
-        </div>
-
-        <div class="feature-text">
-
-            <span>
-                01 / HOODIE
-            </span>
-
-            <h2>
-                DV ZIP<br>
-                HOODIE
-            </h2>
-
-            <p>
-                Washed charcoal heavyweight hoodie featuring
-                custom metallic hardware, pink hood lining,
-                decorative zip construction and signature
-                DI OLVRE graphics.
-            </p>
-
-            <button
-                class="text-link product-open"
-                data-product="hoodie"
-            >
-                VIEW PRODUCT →
-            </button>
-
-        </div>
-
-    </section>
-
-
-    <!-- FEATURE PANTS -->
-
-    <section class="feature feature-reverse">
-
-        <div class="feature-image">
-
-            <img
-                src="img/pantalones_parte_trasera.png"
-                alt="DV Flare Jeans Back"
-            >
-
-        </div>
-
-        <div class="feature-text">
-
-            <span>
-                02 / JEANS
-            </span>
-
-            <h2>
-                DV FLARE<br>
-                JEANS
-            </h2>
-
-            <p>
-                Washed black flare jeans with distressed construction,
-                paint details, custom DV branding and a wide,
-                elongated silhouette.
-            </p>
-
-            <button
-                class="text-link product-open"
-                data-product="pants"
-            >
-                VIEW PRODUCT →
-            </button>
-
-        </div>
-
-    </section>
-
-
-    <!-- COLLECTION -->
-
-    <section class="collection" id="collection">
-
-        <div class="collection-products">
-
-            <img
-                src="img/sudadera_parte_delantera.png"
-                alt="DI OLVRE hoodie"
-                class="collection-hoodie"
-            >
-
-            <img
-                src="img/pantalones_parte_delantera.png"
-                alt="DI OLVRE jeans"
-                class="collection-pants"
-            >
-
-        </div>
-
-        <div class="collection-copy">
-
-            <span>
-                DROP 001
-            </span>
-
-            <h2>
-                THE FIRST<br>
-                STATEMENT.
-            </h2>
-
-            <a href="#new-in">
-                DISCOVER COLLECTION
-            </a>
-
-        </div>
-
-    </section>
-
-
-    <!-- STORY -->
-
-    <section class="story" id="story">
-
-        <div class="story-number">
-            001
-        </div>
-
-        <div class="story-content">
-
-            <p class="eyebrow">
-                DI OLVRE
+            <p class="section-label">
+                PRIVATE ACCESS
             </p>
 
             <h2>
-                CREATED FROM AN IDEA.<br>
-                BUILT INTO A PIECE.
+                ACCESS
+                <span>
+                    BEFORE THE DROP.
+                </span>
             </h2>
 
-            <p class="story-text">
-                DI OLVRE is built around distinctive silhouettes,
-                custom details and pieces designed to stand apart.
-                Every garment begins as an idea and evolves through
-                construction, experimentation and material.
-            </p>
 
-        </div>
+            <form id="newsletterForm">
 
-    </section>
+                <input
+                    id="newsletterEmail"
+                    type="email"
+                    placeholder="ENTER YOUR EMAIL"
+                    required
+                >
 
+                <button type="submit">
+                    JOIN →
+                </button>
 
-    <!-- NEWSLETTER -->
-
-    <section class="newsletter">
-
-        <span>
-            PRIVATE ACCESS
-        </span>
-
-        <h2>
-            JOIN THE DROP
-        </h2>
-
-        <form id="newsletterForm">
-
-            <input
-                type="email"
-                id="newsletterEmail"
-                placeholder="EMAIL ADDRESS"
-                required
-            >
-
-            <button type="submit">
-                JOIN
-            </button>
-
-        </form>
-
-        <p id="newsletterMessage"></p>
-
-    </section>
+            </form>
 
 
-    <!-- FOOTER -->
+            <p
+                class="newsletter-message"
+                id="newsletterMessage"
+            ></p>
+
+        </section>
+
+
+    </main>
+
+
+
+    <!-- =========================
+         FOOTER
+    ========================== -->
 
     <footer class="footer">
 
-        <div class="footer-brand">
+
+        <div class="footer-logo">
             DI OLVRE
         </div>
 
-        <div class="footer-links">
+
+        <div class="footer-grid">
+
 
             <div>
 
-                <span>SHOP</span>
+                <span>
+                    SHOP
+                </span>
 
-                <a href="#new-in">New In</a>
-                <a href="#collection">Drop 001</a>
+                <a href="#shop">
+                    Drop 001
+                </a>
+
+                <a href="#shop">
+                    New In
+                </a>
 
             </div>
+
 
             <div>
 
-                <span>INFO</span>
+                <span>
+                    INFORMATION
+                </span>
 
-                <a href="#">Shipping</a>
-                <a href="#">Returns</a>
-                <a href="#">Size Guide</a>
-                <a href="#">Contact</a>
+                <a href="#">
+                    Shipping
+                </a>
+
+                <a href="#">
+                    Returns
+                </a>
+
+                <a href="#">
+                    Size Guide
+                </a>
+
+                <a href="#">
+                    Contact
+                </a>
 
             </div>
+
 
             <div>
 
-                <span>SOCIAL</span>
+                <span>
+                    SOCIAL
+                </span>
 
-                <a href="#">Instagram</a>
-                <a href="#">TikTok</a>
+                <a href="#">
+                    Instagram
+                </a>
+
+                <a href="#">
+                    TikTok
+                </a>
 
             </div>
+
+
+            <div>
+
+                <span>
+                    LOCATION
+                </span>
+
+                <p>
+                    SPAIN
+                </p>
+
+            </div>
+
 
         </div>
+
 
         <div class="footer-bottom">
 
@@ -520,7 +1167,7 @@
             </span>
 
             <span>
-                SPAIN
+                ALL RIGHTS RESERVED
             </span>
 
         </div>
@@ -528,15 +1175,140 @@
     </footer>
 
 
-    <!-- PRODUCT MODAL -->
 
-    <section
+    <!-- =========================
+         MENU
+    ========================== -->
+
+    <aside
+        class="menu-panel"
+        id="menuPanel"
+    >
+
+
+        <div class="panel-top">
+
+            <span>
+                MENU
+            </span>
+
+            <button id="closeMenu">
+                ×
+            </button>
+
+        </div>
+
+
+        <nav>
+
+            <a href="#shop">
+
+                <small>
+                    01
+                </small>
+
+                SHOP
+
+            </a>
+
+
+            <a href="#story">
+
+                <small>
+                    02
+                </small>
+
+                ABOUT
+
+            </a>
+
+
+            <a href="#private-access">
+
+                <small>
+                    03
+                </small>
+
+                PRIVATE ACCESS
+
+            </a>
+
+        </nav>
+
+
+        <div class="menu-social">
+
+            <a href="#">
+                INSTAGRAM
+            </a>
+
+            <a href="#">
+                TIKTOK
+            </a>
+
+        </div>
+
+
+    </aside>
+
+
+
+    <!-- =========================
+         SEARCH
+    ========================== -->
+
+    <div
+        class="search-overlay"
+        id="searchOverlay"
+    >
+
+
+        <div class="search-header">
+
+            <span>
+                SEARCH
+            </span>
+
+            <button id="closeSearch">
+                ×
+            </button>
+
+        </div>
+
+
+        <div class="search-field">
+
+            <input
+                id="searchInput"
+                type="text"
+                placeholder="SEARCH PRODUCTS"
+            >
+
+        </div>
+
+
+        <div
+            class="search-results"
+            id="searchResults"
+        ></div>
+
+
+    </div>
+
+
+
+    <!-- =========================
+         PRODUCT MODAL
+    ========================== -->
+
+    <div
         class="product-modal"
         id="productModal"
     >
 
+
         <button
-            class="close-modal"
+            class="close-product"
             id="closeProduct"
         >
             ×
@@ -546,8 +1318,8 @@
         <div class="modal-gallery">
 
             <img
-                id="modalProductImage"
                 src=""
+                id="modalProductImage"
                 alt=""
             >
 
@@ -570,13 +1342,16 @@
         </div>
 
 
-        <div class="modal-product-info">
+        <div class="modal-info">
 
-            <p class="product-status">
-                NEW IN
+
+            <p class="product-status modal-status">
+                DROP 001
             </p>
 
+
             <h2 id="modalProductName"></h2>
+
 
             <p
                 class="modal-price"
@@ -592,10 +1367,10 @@
 
             <div class="size-section">
 
-                <div class="size-title">
+                <div class="size-header">
 
                     <span>
-                        SIZE
+                        SELECT SIZE
                     </span>
 
                     <button>
@@ -604,15 +1379,24 @@
 
                 </div>
 
-                <div
-                    class="size-options"
-                    id="sizeOptions"
-                >
 
-                    <button data-size="S">S</button>
-                    <button data-size="M">M</button>
-                    <button data-size="L">L</button>
-                    <button data-size="XL">XL</button>
+                <div class="size-options">
+
+                    <button data-size="S">
+                        S
+                    </button>
+
+                    <button data-size="M">
+                        M
+                    </button>
+
+                    <button data-size="L">
+                        L
+                    </button>
+
+                    <button data-size="XL">
+                        XL
+                    </button>
 
                 </div>
 
@@ -627,7 +1411,7 @@
             </button>
 
 
-            <div class="product-accordions">
+            <div class="product-details">
 
                 <details>
 
@@ -639,6 +1423,7 @@
 
                 </details>
 
+
                 <details>
 
                     <summary>
@@ -646,25 +1431,32 @@
                     </summary>
 
                     <p>
-                        Shipping and returns information will
-                        be available when DROP 001 launches.
+                        Shipping and return information
+                        will be available when DROP 001
+                        launches.
                     </p>
 
                 </details>
 
             </div>
 
+
         </div>
 
-    </section>
+
+    </div>
 
 
-    <!-- CART -->
+
+    <!-- =========================
+         CART
+    ========================== -->
 
     <aside
-        class="cart-panel"
+        class="cart"
         id="cartPanel"
     >
+
 
         <div class="cart-header">
 
@@ -678,12 +1470,15 @@
 
         </div>
 
+
         <div
-            class="cart-content"
+            class="cart-items"
             id="cartItems"
         ></div>
 
-        <div class="cart-footer">
+
+        <div class="cart-bottom">
+
 
             <div class="cart-total">
 
@@ -697,17 +1492,22 @@
 
             </div>
 
+
             <button class="checkout">
                 CHECKOUT
             </button>
 
+
             <p>
-                Shipping and taxes calculated at checkout.
+                TAXES AND SHIPPING CALCULATED AT CHECKOUT
             </p>
+
 
         </div>
 
+
     </aside>
+
 
 
     <div
